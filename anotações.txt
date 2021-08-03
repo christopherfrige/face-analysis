@@ -1,0 +1,15 @@
+Comandos úteis AWS CLI:
+aws config 
+'-> para configurar o usuário/senha, região e output
+
+aws s3 sync <diretório-do-PC> s3://<diretorio-S3>
+'-> sincroniza o diretório da S3 de forma que esteja igual ao diretorio do PC
+
+aws s3 cp <caminho-arquivo> s3://<diretorio-s3>
+'- copia um arquivo para o diretorio da s3.
+
+aws rekognition list-collections
+'-> obtém uma lista das CollectionId do usuário
+
+aws rekognition list-faces --collection-id <nome-da-coleção> | grep <filtro-opcional>
+'-> lista as imagens presentes na coleção, previamente indexadas, podendo filtrar o output.
