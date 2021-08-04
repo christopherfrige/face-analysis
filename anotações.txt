@@ -2,6 +2,18 @@ Comandos úteis AWS CLI:
 aws config 
 '-> para configurar o usuário/senha, região e output
 
+aws lambda update-function-code --function-name <Nome-Função-Lambda> --zip-file fileb://<Diretorio-local>
+'-> envia uma função para o AWS Lambda (necessário ter criado uma função previamente no ambiente Lambda)
+'-> lembrar de zipar a função
+'-> se a biblioteca não tiver no aws, terá que dar upload também
+
+aws lambda publish-version --function-name faceAnalise
+'-> versiona o codigo que está atualmente no console do lambda
+
+aws lambda create-alias --function-name faceAnalise --function-version 1 --name PROD
+'-> Cria um "apelido" para a versão que desejar
+'-> Util para separar a produção e os testes em si.
+
 aws s3 sync <diretório-do-PC> s3://<diretorio-S3>
 '-> sincroniza o diretório da S3 de forma que esteja igual ao diretorio do PC
 
@@ -13,3 +25,5 @@ aws rekognition list-collections
 
 aws rekognition list-faces --collection-id <nome-da-coleção> | grep <filtro-opcional>
 '-> lista as imagens presentes na coleção, previamente indexadas, podendo filtrar o output.
+
+pesquisar aws cli para ver o resto da documentação.
